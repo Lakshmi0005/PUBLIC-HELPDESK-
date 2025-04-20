@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India at a Glance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #007B7F;
+      --secondary: #2C2C2C;
+      --accent: #D4A017;
+      --text: #2C2C2C;
+      --bg-light: #F8F9F5;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    .hero-header {
+      background: linear-gradient(135deg, var(--primary) 0%, #00595C 100%);
+      color: white;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png') center/cover no-repeat;
+      opacity: 0.1;
+    }
+
+    .hero-title {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      position: relative;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Improved Video Carousel Styles */
+.video-carousel-container {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  margin: 2rem auto; /* Changed from negative margin to positive */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.video-carousel {
+  position: relative;
+  width: 100%;
+  padding-bottom: 45%; /* Slightly more square aspect ratio */
+  background-color: #000;
+}
+
+.video-carousel-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.video-carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.video-carousel-item.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.video-carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-caption {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem 1.75rem;
+  border-radius: 10px;
+  max-width: 45%;
+  color: white;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease 0.3s;
+}
+
+.video-carousel-item.active .video-caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.video-caption h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.video-caption p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.video-control-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.video-control-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+  color: var(--accent);
+}
+
+.video-indicators {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.video-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.video-indicator.active {
+  background: var(--accent);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(212, 160, 23, 0.7);
+}
+
+/* Loading Animation */
+.video-carousel::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+  z-index: 5;
+  display: none;
+}
+
+.video-carousel.loading::after {
+  display: block;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .video-carousel-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .video-carousel {
+    padding-bottom: 50%;
+  }
+  
+  .video-caption {
+    max-width: 55%;
+    padding: 1rem 1.5rem;
+  }
+  
+  .video-caption h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-carousel-container {
+    width: 95%;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+  }
+  
+  .video-carousel {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .video-caption {
+    max-width: 70%;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+  
+  .video-controls {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .video-indicators {
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-carousel-container {
+    width: 100%;
+    border-radius: 0;
+    margin: 1rem auto;
+  }
+  
+  .video-caption {
+    position: static;
+    max-width: 100%;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transform: none;
+    padding: 1rem;
+    margin-top: -4px;
+  }
+  
+  .video-controls {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .video-control-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .video-indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+    /* Content Styles */
+    .content-section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    /* Responsive Adjustments for Video Carousel */
+    @media (max-width: 992px) {
+      .video-caption {
+        max-width: 50%;
+        padding: 0.8rem 1.2rem;
+      }
+      
+      .video-controls {
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-carousel-container {
+        margin-top: -1.5rem;
+        border-radius: 0;
+      }
+      
+      .video-caption {
+        max-width: 70%;
+        bottom: 1rem;
+        left: 1rem;
+      }
+      
+      .video-controls {
+        bottom: 1rem;
+        right: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .video-caption {
+        position: static;
+        max-width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 0;
+        margin-top: -4px;
+      }
+      
+      .video-controls {
+        bottom: 0.5rem;
+        right: 0.5rem;
+      }
+      
+      .video-control-btn {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    /* Rest of your existing styles... */
+    /* Card Styles */
+    .info-card {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      background-color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* National Symbols Section */
+    .symbols-section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-top: 3rem;
+    }
+
+    /* Footer Styles */
+    .footer {
+      background-color: var(--secondary);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero Header -->
+  <header class="hero-header text-center">
+    <div class="container">
+      <h1 class="hero-title">India at a Glance</h1>
+      <p class="hero-subtitle">Discover the incredible diversity and rich heritage of the world's largest democracy</p>
+    </div>
+  </header>
+
+  <!-- Improved Video Carousel -->
+  <div class="container">
+    <div class="video-carousel-container">
+      <div class="video-carousel">
+        <div class="video-carousel-inner">
+          <!-- Video 1 -->
+          <div class="video-carousel-item active">
+            <video src="profile1.mp4" autoplay muted loop playsinline></video>
+            <div class="video-caption">
+              <h3>Incredible India</h3>
+              <p>Land of diversity and unity</p>
+            </div>
+          </div>
+          
+          <!-- Video 2 -->
+          <div class="video-carousel-item">
+            <video src="profile2.mp4" muted loop playsinline></video>
+            <div class="video-caption">
+              <h3>Cultural Heritage</h3>
+              <p>5000 years of civilization</p>
+            </div>
+          </div>
+          
+          <!-- Video 3 -->
+          <div class="video-carousel-item">
+            <video src="profile3.mp4" muted loop playsinline></video>
+            <div class="video-caption">
+              <h3>Natural Beauty</h3>
+              <p>From Himalayas to Indian Ocean</p>
+            </div>
+          </div>
+          
+          <!-- Video 4 -->
+          <div class="video-carousel-item">
+            <video src="profile4.mp4" muted loop playsinline></video>
+            <div class="video-caption">
+              <h3>Modern India</h3>
+              <p>Technology and tradition</p>
+            </div>
+          </div>
+          
+          <!-- Video 5 -->
+          <div class="video-carousel-item">
+            <video src="profile5.mp4" muted loop playsinline></video>
+            <div class="video-caption">
+              <h3>Spiritual Land</h3>
+              <p>Birthplace of major world religions</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Video Controls -->
+        <div class="video-controls">
+          <button class="video-control-btn prev-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="video-control-btn next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <!-- Video Indicators -->
+        <div class="video-indicators">
+          <div class="video-indicator active" data-index="0"></div>
+          <div class="video-indicator" data-index="1"></div>
+          <div class="video-indicator" data-index="2"></div>
+          <div class="video-indicator" data-index="3"></div>
+          <div class="video-indicator" data-index="4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <h2 class="section-title text-center">Key Facts About India</h2>
+      
+      <div class="row g-4">
+        <!-- Geographical Data -->
+        <div class="col-md-6 col-lg-3">
+          <div class="info-card">
+            <div class="card-body">
+              <div class="text-center mb-4">
+                <i class="fas fa-globe-asia card-icon"></i>
+                <h3 class="card-title">Geographical Data</h3>
+              </div>
+              <ul>
+                <li>Area: 3.3 million sq km</li>
+                <li>Capital: New Delhi</li>
+                <li>Coastline: 7,516.6 km</li>
+                <li>Climate: Tropical Monsoon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="col-md-6 col-lg-3">
+          <div class="info-card">
+            <div class="card-body">
+              <div class="text-center mb-4">
+                <i class="fas fa-map-marked-alt card-icon"></i>
+                <h3 class="card-title">Location</h3>
+              </div>
+              <p>Located in South Asia between latitudes 8°4' and 37°6' north and longitudes 68°7' and 97°25' east.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demographics -->
+        <div class="col-md-6 col-lg-3">
+          <div class="info-card">
+            <div class="card-body">
+              <div class="text-center mb-4">
+                <i class="fas fa-users card-icon"></i>
+                <h3 class="card-title">Demographics</h3>
+              </div>
+              <ul>
+                <li>Population: Over 1.3 billion</li>
+                <li>Languages: 22 official languages</li>
+                <li>Literacy Rate: 74.04%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Administrative Setup -->
+        <div class="col-md-6 col-lg-3">
+          <div class="info-card">
+            <div class="card-body">
+              <div class="text-center mb-4">
+                <i class="fas fa-landmark card-icon"></i>
+                <h3 class="card-title">Administrative Setup</h3>
+              </div>
+              <ul>
+                <li>28 States</li>
+                <li>8 Union Territories</li>
+                <li>Parliamentary Democracy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- National Symbols Section -->
+      <div class="symbols-section">
+        <h2 class="section-title text-center mb-5">National Symbols</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="symbol-card">
+              <i class="fas fa-paw symbol-icon"></i>
+              <h3 class="symbol-title">National Animal</h3>
+              <p>Royal Bengal Tiger</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="symbol-card">
+              <i class="fas fa-dove symbol-icon"></i>
+              <h3 class="symbol-title">National Bird</h3>
+              <p>Peacock</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="symbol-card">
+              <i class="fas fa-spa symbol-icon"></i>
+              <h3 class="symbol-title">National Flower</h3>
+              <p>Lotus</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="footer-title">About India</h3>
+          <p>India is a diverse nation with a rich cultural heritage and a rapidly growing economy. It's the world's largest democracy and second most populous country.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Government of India</a></li>
+            <li><a href="#">Tourism</a></li>
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Economy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h3 class="footer-title">Contact</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt me-2"></i> New Delhi, India</li>
+            <li><i class="fas fa-phone me-2"></i> +91 11 1234 5678</li>
+            <li><i class="fas fa-envelope me-2"></i> info@india.gov.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2025 Government of India. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Video Carousel Functionality
+      const videoItems = document.querySelectorAll('.video-carousel-item');
+      const indicators = document.querySelectorAll('.video-indicator');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      let currentIndex = 0;
+      let intervalId;
+      
+      // Function to show specific video
+      function showVideo(index) {
+        // Hide all videos
+        videoItems.forEach(item => {
+          item.classList.remove('active');
+          const video = item.querySelector('video');
+          video.pause();
+        });
+        
+        // Reset all indicators
+        indicators.forEach(indicator => {
+          indicator.classList.remove('active');
+        });
+        
+        // Show selected video
+        videoItems[index].classList.add('active');
+        const currentVideo = videoItems[index].querySelector('video');
+        currentVideo.currentTime = 0;
+        currentVideo.play();
+        
+        // Update active indicator
+        indicators[index].classList.add('active');
+        
+        currentIndex = index;
+      }
+      
+      // Function for next video
+      function nextVideo() {
+        let newIndex = (currentIndex + 1) % videoItems.length;
+        showVideo(newIndex);
+      }
+      
+      // Function for previous video
+      function prevVideo() {
+        let newIndex = (currentIndex - 1 + videoItems.length) % videoItems.length;
+        showVideo(newIndex);
+      }
+      
+      // Auto-play functionality
+      function startAutoPlay() {
+        intervalId = setInterval(nextVideo, 5000);
+      }
+      
+      // Pause autoplay when user interacts
+      function pauseAutoPlay() {
+        clearInterval(intervalId);
+      }
+      
+      // Initialize
+      showVideo(0);
+      startAutoPlay();
+      
+      // Event Listeners
+      prevBtn.addEventListener('click', () => {
+        pauseAutoPlay();
+        prevVideo();
+        startAutoPlay();
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        pauseAutoPlay();
+        nextVideo();
+        startAutoPlay();
+      });
+      
+      indicators.forEach(indicator => {
+        indicator.addEventListener('click', () => {
+          pauseAutoPlay();
+          const index = parseInt(indicator.getAttribute('data-index'));
+          showVideo(index);
+          startAutoPlay();
+        });
+      });
+      
+      // Pause when hovering over carousel
+      const carouselContainer = document.querySelector('.video-carousel-container');
+      carouselContainer.addEventListener('mouseenter', pauseAutoPlay);
+      carouselContainer.addEventListener('mouseleave', startAutoPlay);
+      
+      // Handle visibility changes
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          pauseAutoPlay();
+        } else {
+          startAutoPlay();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications - India</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #007B7F;
+      --secondary: #2C2C2C;
+      --accent: #D4A017;
+      --text: #2C2C2C;
+      --bg-light: #F8F9F5;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #00595C 100%);
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: calc(100vh - 150px);
+    }
+
+    nav {
+      width: 280px;
+      background-color: white;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
+    }
+
+    nav h4 {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(0, 123, 127, 0.1);
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    nav a::before {
+      content: '\f105';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 0.75rem;
+      color: var(--accent);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover::before {
+      opacity: 1;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      min-width: 0;
+    }
+
+    .content-box {
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .content-box h2 {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .content-box h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    .content-box img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .content-box img:hover {
+      transform: scale(1.02);
+    }
+
+    .content-box p {
+      margin-bottom: 1.5rem;
+    }
+
+    .content-box strong {
+      color: var(--primary);
+    }
+
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+    }
+
+    footer p {
+      margin: 0;
+      position: relative;
+    }
+
+    @media (max-width: 992px) {
+      nav {
+        width: 100%;
+        padding: 1.5rem;
+      }
+      
+      main {
+        padding: 1.5rem;
+      }
+      
+      .content-box {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+      
+      .content-box {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Government Publications</h1>
+  </header>
+
+  <div class="container">
+    <nav>
+      <h4>Publications Menu</h4>
+      <ul>
+        <li><a href="https://www.india.gov.in/my-government/publications/books" target="_blank"><i class="fas fa-book me-2"></i> Books & Reports</a></li>
+        <li><a href="https://www.researchgate.net/institution/Government-of-India" target="_blank"><i class="fas fa-newspaper me-2"></i> Research Papers</a></li>
+        <li><a href="https://mospi.gov.in/web/mospi/publications" target="_blank"><i class="fas fa-chart-bar me-2"></i> Statistical Data</a></li>
+        <li><a href="https://www.mea.gov.in/policy-documents.htm" target="_blank"><i class="fas fa-file-pdf me-2"></i> Policy Documents</a></li>
+        <li><a href="https://dsel.education.gov.in/publications" target="_blank"><i class="fas fa-graduation-cap me-2"></i> Educational Materials</a></li>
+        <li><a href="https://egazette.gov.in/" target="_blank"><i class="fas fa-gavel me-2"></i> Official Gazette</a></li>
+        <li><a href="https://www.censusindia.gov.in/census_publications/" target="_blank"><i class="fas fa-users me-2"></i> Census Reports</a></li>
+        <li><a href="https://www.rbi.org.in/Scripts/AnnualPublications.aspx" target="_blank"><i class="fas fa-rupee-sign me-2"></i> Economic Surveys</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="content-box">
+        <img src="https://scholarlykitchen.sspnet.org/wp-content/uploads/2017/03/iStock-507071472.jpg" alt="Publications Banner">
+        <h2>Explore Official Publications</h2>
+        <p>The Government of India publishes a wide range of official documents, research papers, statistical reports, and policy documents to promote transparency and public knowledge. These publications serve as valuable resources for researchers, policymakers, and citizens alike.</p>
+        <p>Our collection includes comprehensive reports on economic development, social welfare programs, scientific research, and cultural heritage documentation.</p>
+        <p><strong>Browse the menu on the left</strong> to access different categories of publications. Each section provides direct links to official government resources and digital libraries.</p>
+        
+        <div class="alert alert-primary mt-4" role="alert">
+          <i class="fas fa-info-circle me-2"></i> Most publications are available for free download in PDF format.
+        </div>
+        
+        <div class="alert alert-success mt-4" role="alert">
+          <h4 class="alert-heading"><i class="fas fa-external-link-alt me-2"></i> Featured Resources</h4>
+          <ul>
+            <li><a href="https://www.ncert.nic.in/publication.php" target="_blank">NCERT Publications</a> - Educational materials for schools</li>
+            <li><a href="https://www.indiaculture.nic.in/publications" target="_blank">Ministry of Culture Publications</a> - Arts and heritage documents</li>
+            <li><a href="https://dst.gov.in/scientific-publications" target="_blank">DST Scientific Publications</a> - Research and innovation reports</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Government of India | Designed for Public Access</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

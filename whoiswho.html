@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is Who - India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007B7F;
+            --secondary: #2C2C2C;
+            --accent: #D4A017;
+            --text: #2C2C2C;
+            --bg-light: #F8F9F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text);
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            height: fit-content;
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        .sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            color: var(--text);
+            padding: 0.75rem 1rem;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-info h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .more-info-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .more-info-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .custom-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+        }
+
+        .custom-table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+
+        .custom-table tr:hover {
+            background-color: rgba(0,123,127,0.05);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+            }
+            
+            .profile-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Who is Who in India</h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <button class="nav-link" onclick="showSection('president')">President</button>
+            <button class="nav-link" onclick="showSection('vice-president')">Vice President</button>
+            <button class="nav-link" onclick="showSection('prime-minister')">Prime Minister</button>
+            <button class="nav-link" onclick="showSection('chief-ministers')">Chief Ministers</button>
+            <button class="nav-link" onclick="showSection('supreme-court')">Supreme Court</button>
+        </div>
+
+        <div class="main-content">
+            <section id="president" class="section active">
+                <div class="profile-section">
+                    <img src="https://www.sarkaritel.com/uploads/images/643e2115b787edraupati-murmu.jpg" alt="President of India" class="profile-img" />
+                    <div class="profile-info">
+                        <h2>President of India</h2>
+                        <p>The President of India is the ceremonial head of state and the supreme commander of the Indian Armed Forces. The position is currently held by <strong>Droupadi Murmu</strong>, who is the first tribal woman to hold this prestigious office.</p>
+                        <a href="https://presidentofindia.nic.in" class="more-info-link">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="vice-president" class="section">
+                <div class="profile-section">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Shri_Jagdeep_Dhankhar_official_portrait_%282%29_%28cropped%29.jpg" alt="Vice President of India" class="profile-img" />
+                    <div class="profile-info">
+                        <h2>Vice President of India</h2>
+                        <p>The Vice President serves as the Chairman of the Rajya Sabha and acts as President in case of vacancy. The current Vice President is <strong>Jagdeep Dhankhar</strong>.</p>
+                        <a href="https://vicepresidentofindia.nic.in" class="more-info-link">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="prime-minister" class="section">
+                <div class="profile-section">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Official_Photograph_of_Prime_Minister_Narendra_Modi_Portrait.png" alt="Prime Minister of India" class="profile-img" />
+                    <div class="profile-info">
+                        <h2>Prime Minister of India</h2>
+                        <p>The Prime Minister is the head of the government and the leader of the Union Cabinet. <strong>Narendra Modi</strong> is currently serving as the Prime Minister of India.</p>
+                        <a href="https://www.pmindia.gov.in" class="more-info-link">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="chief-ministers" class="section">
+                <h2>Chief Ministers of States</h2>
+                <div class="table-container">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>State</th>
+                                <th>Chief Minister</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Andhra Pradesh</td><td>Nara Chandra babu naidu</td></tr>
+                            <tr><td>Arunachal Pradesh</td><td>Pema Khandu</td></tr>
+                            <tr><td>Assam</td><td>Himanta Biswa Sarma</td></tr>
+                            <tr><td>Bihar</td><td>Nitish Kumar</td></tr>
+                            <tr><td>Chhattisgarh</td><td>Vishnu Deo Sai</td></tr>
+                            <tr><td>Goa</td><td>Pramod Sawant</td></tr>
+                            <tr><td>Gujarat</td><td>Bhupendra Patel</td></tr>
+                            <tr><td>Haryana</td><td>Nayab Singh Saini</td></tr>
+                            <tr><td>Himachal Pradesh</td><td>Sukhvinder Singh Sukhu</td></tr>
+                            <tr><td>Jharkhand</td><td>Champai Soren</td></tr>
+                            <tr><td>Karnataka</td><td>Siddaramaiah</td></tr>
+                            <tr><td>Kerala</td><td>Pinarayi Vijayan</td></tr>
+                            <tr><td>Madhya Pradesh</td><td>Mohan Yadav</td></tr>
+                            <tr><td>Maharashtra</td><td>Eknath Shinde</td></tr>
+                            <tr><td>Manipur</td><td>N. Biren Singh</td></tr>
+                            <tr><td>Meghalaya</td><td>Conrad Sangma</td></tr>
+                            <tr><td>Mizoram</td><td>Lalduhoma</td></tr>
+                            <tr><td>Nagaland</td><td>Neiphiu Rio</td></tr>
+                            <tr><td>Odisha</td><td>Naveen Patnaik</td></tr>
+                            <tr><td>Punjab</td><td>Bhagwant Mann</td></tr>
+                            <tr><td>Rajasthan</td><td>Bhairon Singh Shekhawat </td></tr>
+                            <tr><td>Sikkim</td><td>Prem Singh Tamang</td></tr>
+                            <tr><td>Tamil Nadu</td><td>M. K. Stalin</td></tr>
+                            <tr><td>Telangana</td><td>A. Revanth Reddy</td></tr>
+                            <tr><td>Tripura</td><td>Manik Saha</td></tr>
+                            <tr><td>Uttar Pradesh</td><td>Yogi Adityanath</td></tr>
+                            <tr><td>Uttarakhand</td><td>Pushkar Singh Dhami</td></tr>
+                            <tr><td>West Bengal</td><td>Mamata Banerjee</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+
+            <section id="supreme-court" class="section">
+                <div class="profile-section">
+                    <img src="https://indialegallive.com/wp-content/uploads/2022/06/Supreme-Court-pastles.jpg" alt="Supreme Court of India" class="profile-img" />
+                    <div class="profile-info">
+                        <h2>Supreme Court of India</h2>
+                        <p>The Supreme Court is the highest judicial forum and final court of appeal. It consists of the Chief Justice of India and 33 other judges appointed by the President of India.</p>
+                        <a href="https://www.sci.gov.in" class="more-info-link">Learn More</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Who is Who in India. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section with animation
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                selectedSection.style.animation = 'none';
+                selectedSection.offsetHeight; // Trigger reflow
+                selectedSection.style.animation = 'fadeIn 0.5s ease-out';
+            }
+
+            // Update active state of navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('onclick').includes(sectionId)) {
+                    link.style.backgroundColor = 'var(--primary)';
+                    link.style.color = 'white';
+                } else {
+                    link.style.backgroundColor = '';
+                    link.style.color = 'var(--text)';
+                }
+            });
+        }
+
+        // Initialize the page with the president section active
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('president');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Labour and Employment - India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #007B7F;
+      --secondary: #2C2C2C;
+      --accent: #D4A017;
+      --text: #2C2C2C;
+      --bg-light: #F8F9F5;
+      --white: #ffffff;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), #009688);
+      color: var(--white);
+      padding: 2.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      position: relative;
+    }
+    
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    
+    main {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    aside {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-top: 0;
+    }
+    
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    img:hover {
+      transform: scale(1.02);
+    }
+    
+    ul {
+      padding-left: 1.5rem;
+    }
+    
+    ul li {
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+    
+    ul li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    
+    .highlight {
+      background-color: rgba(0, 123, 127, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .highlight strong {
+      color: var(--primary);
+    }
+    
+    .icon-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .icon-list li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .icon-list i {
+      color: var(--accent);
+      margin-right: 0.8rem;
+      font-size: 1.1rem;
+      width: 1.5rem;
+      text-align: center;
+    }
+    
+    footer {
+      background-color: var(--secondary);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Labour and Employment in India</h1>
+</header>
+
+<div class="container">
+  <main>
+    <h2>Overview</h2>
+    <p>
+      The Ministry of Labour & Employment is one of the oldest and most important ministries of the Government of India. It aims to enhance the quality of life of workers by providing social security, ensuring workplace safety, and creating better employment opportunities.
+    </p>
+
+    <img src="https://th-i.thgim.com/public/incoming/f8a0zj/article65377930.ece/alternates/LANDSCAPE_1200/2022-05-02T094042Z_1612909435_RC2VYT9HATHZ_RTRMADP_3_SOUTHASIA-WEATHER-HEATWAVE.JPG" alt="Labour and Employment"/>
+
+    <div class="highlight">
+      <p>India's workforce is undergoing a transformation with digital initiatives and policy reforms to create a more inclusive and productive labor market.</p>
+    </div>
+
+    <h2>Key Focus Areas</h2>
+    <ul>
+      <li><strong>Labour Laws Simplification and Codification:</strong> Streamlining complex regulations into comprehensive codes</li>
+      <li><strong>Welfare and Social Security for Workers:</strong> Expanding coverage to unorganized sector workers</li>
+      <li><strong>Employment Services and Career Counseling:</strong> Connecting job seekers with opportunities nationwide</li>
+      <li><strong>Skill Development and Apprenticeships:</strong> Bridging the gap between education and employment</li>
+      <li><strong>Occupational Health and Workplace Safety:</strong> Ensuring safe working conditions across industries</li>
+    </ul>
+
+    <h2>Digital and Policy Initiatives</h2>
+    <p>
+      The government has launched several digital platforms like the 
+      <strong>Shram Suvidha Portal</strong>, <strong>National Career Service (NCS)</strong>, 
+      and <strong>e-SHRAM</strong> for improved governance and access to services.
+      These platforms help in reducing paperwork, ensuring compliance, and facilitating employment.
+    </p>
+
+    <h2>Labour Codes</h2>
+    <p>
+      To streamline labor laws, the government has introduced four Labour Codes:
+    </p>
+    <ul class="icon-list">
+      <li><i class="fas fa-file-invoice-dollar"></i> <strong>Code on Wages:</strong> Standardizing wage payments across sectors</li>
+      <li><i class="fas fa-industry"></i> <strong>Industrial Relations Code:</strong> Modernizing employer-employee relations</li>
+      <li><i class="fas fa-shield-alt"></i> <strong>Social Security Code:</strong> Expanding welfare coverage</li>
+      <li><i class="fas fa-hard-hat"></i> <strong>Occupational Safety, Health and Working Conditions Code:</strong> Ensuring workplace safety standards</li>
+    </ul>
+
+    <h2>Skill Development and Employment</h2>
+    <p>
+      Through programs like the <strong>National Apprenticeship Promotion Scheme (NAPS)</strong> 
+      and <strong>Skill India Mission</strong>, youth are being trained for jobs across sectors, 
+      boosting both employability and economic growth.
+    </p>
+  </main>
+
+  <div>
+    <aside>
+      <h3>What's New</h3>
+      <ul>
+        <li>Launch of <strong>e-SHRAM</strong> portal for unorganised sector workers</li>
+        <li>Revised safety standards for hazardous industries</li>
+        <li>Online registration for the PM Shram Yogi Maandhan Scheme</li>
+        <li>New labor code implementation guidelines</li>
+        <li>Expansion of apprenticeship opportunities</li>
+      </ul>
+    </aside>
+
+    <aside>
+      <h3>Did You Know?</h3>
+      <div class="highlight">
+        <p>India has over <strong>500 million</strong> workforce – the second largest in the world.</p>
+      </div>
+      <ul>
+        <li>e-SHRAM aims to register <strong>38 crore</strong> unorganised workers.</li>
+        <li><strong>NCS</strong> lists over 1 crore jobs and career resources.</li>
+        <li>Apprenticeships have grown by <strong>40%</strong> in last 3 years.</li>
+        <li><strong>80%</strong> of India's workforce is in the informal sector.</li>
+      </ul>
+    </aside>
+
+    <aside>
+      <h3>Schemes & Portals</h3>
+      <ul class="icon-list">
+        <li><i class="fas fa-link"></i> <a href="https://labour.gov.in/aatmanirbhar-bharat-rojgar-yojana-abry" target="_blank">Atmanirbhar Bharat Rojgar Yojana</a></li>
+        <li><i class="fas fa-pension"></i> <a href="https://maandhan.in/show_content.php?lang=1&level=1&ls_id=28&lid=28&page=6" target="_blank">Pradhan Mantri Shram Yogi Maandhan (PM-SYM)</a></li>
+        <li><i class="fas fa-hospital"></i> <a href="https://www.india.gov.in/spotlight/employees-state-insurance-scheme#tab=tab-1" target="_blank">Employees' State Insurance Scheme</a></li>
+        <li><i class="fas fa-briefcase"></i> <a href="https://www.ncs.gov.in/_layouts/15/NCSP/Calendar.aspx" target="_blank">National Career Service (NCS)</a></li>
+        <li><i class="fas fa-graduation-cap"></i> <a href="https://skillindiamission.in/" target="_blank">Skill India Mission</a></li>
+        <li><i class="fas fa-user-graduate"></i> <a href="https://www.apprenticeshipindia.gov.in/" target="_blank">National Apprenticeship Promotion Scheme (NAPS)</a></li>
+        <li><i class="fas fa-id-card"></i> <a href="https://eshram.gov.in/" target="_blank">e-SHRAM Portal</a></li>
+      </ul>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#">About Ministry</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Policies</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Feedback</a>
+    </div>
+    <p>&copy; 2025 Ministry of Labour & Employment, Government of India</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agriculture Awareness - India</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #007B7F;
+      --primary-light: #009688;
+      --secondary: #1e293b;
+      --light: #F8F9F5;
+      --white: #ffffff;
+      --gray: #f9fafb;
+      --dark-gray: #2C2C2C;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: var(--light);
+      color: var(--secondary);
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--light);
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+      background-size: cover;
+    }
+    
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      font-weight: 700;
+    }
+    
+    header p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      opacity: 0.9;
+    }
+    
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      gap: 1.5rem;
+    }
+    
+    main {
+      flex: 3;
+      min-width: 0;
+    }
+    
+    aside {
+      flex: 1;
+      min-width: 280px;
+    }
+    
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .card-body {
+      padding: 1.2rem;
+    }
+    
+    .card-body p {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+    
+    .card-body p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .img-container {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    
+    .img-container img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .card:hover .img-container img {
+      transform: scale(1.03);
+    }
+    
+    .img-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--white);
+      padding: 0.6rem 0.8rem;
+      font-size: 0.8rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    
+    table th {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.8rem;
+    }
+    
+    table td {
+      padding: 0.6rem 0.8rem;
+      border: 1px solid #e0e0e0;
+    }
+    
+    table tr:nth-child(even) {
+      background-color: var(--gray);
+    }
+    
+    table tr:hover {
+      background-color: rgba(0, 123, 127, 0.05);
+    }
+    
+    ul.custom-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+    
+    ul.custom-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: flex-start;
+      font-size: 0.95rem;
+    }
+    
+    ul.custom-list li:last-child {
+      border-bottom: none;
+    }
+    
+    ul.custom-list li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1.2em;
+      margin-left: -1.2em;
+    }
+    
+    .quick-links .link-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: var(--secondary);
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+    
+    .quick-links .link-item:last-child {
+      border-bottom: none;
+    }
+    
+    .quick-links .link-item:hover {
+      color: var(--primary);
+    }
+    
+    .quick-links .link-item i {
+      margin-right: 0.6rem;
+      color: var(--primary);
+      font-size: 1rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+    
+    .fact-box {
+      background: rgba(0, 123, 127, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.9rem;
+    }
+    
+    .fact-box h4 {
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .stat-item {
+      background: var(--gray);
+      padding: 0.8rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+    
+    .stat-item .stat-value {
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+    
+    .stat-item .stat-label {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      opacity: 0.8;
+    }
+    
+    footer {
+      background-color: var(--dark-gray);
+      color: var(--light);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.9rem;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-light);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .social-icons a {
+      color: var(--light);
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: var(--primary-light);
+    }
+    
+    .copyright {
+      opacity: 0.8;
+      font-size: 0.8rem;
+    }
+    
+    .copyright a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+    
+    @media (max-width: 992px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      main, aside {
+        flex: 1 1 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 1.5rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      header p {
+        font-size: 0.9rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agriculture in India</h1>
+    <p>Promoting sustainable practices and awareness among farmers and citizens</p>
+  </header>
+
+  <div class="container">
+    <main>
+      <section class="card">
+        <div class="card-header">
+          Understanding Agriculture in India
+        </div>
+        <div class="card-body">
+          <div class="img-container">
+            <img src="agriculture1.jpg" alt="Indian Farmer in Field">
+            <div class="img-caption">Traditional farming practices meeting modern techniques</div>
+          </div>
+          <p>
+            Agriculture has played a central role in India's history, economy, and culture. It provides livelihoods to over half the population and contributes significantly to the GDP. Major reforms like the Green Revolution and modern policies aim to balance production with sustainability.
+          </p>
+          <p>
+            Today, Indian agriculture stands at a crossroads, embracing technology while preserving traditional wisdom. The sector is evolving with precision farming, digital marketplaces, and climate-smart practices to ensure food security for the nation.
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value">42%</div>
+              <div class="stat-label">Workforce Employed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">16%</div>
+              <div class="stat-label">GDP Contribution</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">1st</div>
+              <div class="stat-label">In Milk Production</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">2nd</div>
+              <div class="stat-label">In Farm Output</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          Major Crops by State
+        </div>
+        <div class="card-body">
+          <div class="img-container">
+            <img src="agriculture2.jpg" alt="India Crop Map">
+            <div class="img-caption">Geographical diversity of crops across India</div>
+          </div>
+          <table>
+            <thead>
+              <tr><th>State</th><th>Major Crops</th><th>Season</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Punjab</td><td>Wheat, Rice, Maize</td><td>Rabi, Kharif</td></tr>
+              <tr><td>Uttar Pradesh</td><td>Sugarcane, Wheat, Paddy</td><td>Annual, Rabi</td></tr>
+              <tr><td>Maharashtra</td><td>Cotton, Sugarcane, Soybean</td><td>Kharif, Annual</td></tr>
+              <tr><td>Tamil Nadu</td><td>Rice, Millets, Groundnut</td><td>Kharif, Rabi</td></tr>
+              <tr><td>West Bengal</td><td>Rice, Jute, Potato</td><td>Kharif, Rabi</td></tr>
+              <tr><td>Karnataka</td><td>Ragi, Coffee, Groundnut</td><td>Kharif, Annual</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          Common Pesticides & Alternatives
+        </div>
+        <div class="card-body">
+          <div class="img-container">
+            <img src="agriculture3.jpg" alt="Pesticide Spraying">
+            <div class="img-caption">Responsible pesticide application in fields</div>
+          </div>
+          <ul class="custom-list">
+            <li><strong>Chlorpyrifos</strong> – Insecticide for rice and cotton crops.</li>
+            <li><strong>Carbendazim</strong> – Broad-spectrum fungicide for vegetables and fruits.</li>
+            <li><strong>Glyphosate</strong> – Common herbicide, controversial due to health risks.</li>
+            <li><strong>Neem Oil</strong> – Organic alternative used widely in Integrated Pest Management.</li>
+            <li><strong>Malathion</strong> – Used in cereals, vegetables, and fruits.</li>
+          </ul>
+          <div class="fact-box">
+            <h4>Important Note</h4>
+            <p>Integrated Pest Management (IPM) is highly encouraged as a sustainable approach that combines biological, cultural, physical and chemical tools to minimize economic, health, and environmental risks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          Current Trends in Indian Agriculture
+        </div>
+        <div class="card-body">
+          <ul class="custom-list">
+            <li><strong>Precision Agriculture:</strong> Utilization of GPS, drones, and IoT devices for optimized farming.</li>
+            <li><strong>Digital Advisory:</strong> Mobile apps providing real-time weather, market prices, and expert advice.</li>
+            <li><strong>eNAM Platform:</strong> National Agriculture Market connecting farmers directly to buyers across India.</li>
+            <li><strong>Water Conservation:</strong> Adoption of micro-irrigation, drip systems, and rainwater harvesting.</li>
+            <li><strong>Organic Farming:</strong> Growing demand leading to increased certified organic cultivation.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <section class="card">
+        <div class="card-header">
+          Quick Links & Resources
+        </div>
+        <div class="card-body">
+          <div class="quick-links">
+            <a href="#" class="link-item">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Crop Calendar</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-tractor"></i>
+              <span>Equipment Rental</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-rupee-sign"></i>
+              <span>Market Prices</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-cloud-sun-rain"></i>
+              <span>Weather Forecast</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Training Programs</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>Helpline Numbers</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          Key Statistics
+        </div>
+        <div class="card-body">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value">156M</div>
+              <div class="stat-label">Hectares Cultivated</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">120M</div>
+              <div class="stat-label">Farm Households</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">85%</div>
+              <div class="stat-label">Small Farmers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">3.1%</div>
+              <div class="stat-label">Annual Growth</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          Upcoming Events
+        </div>
+        <div class="card-body">
+          <div class="quick-links">
+            <a href="#" class="link-item">
+              <i class="fas fa-seedling"></i>
+              <span>Organic Farming Workshop</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-leaf"></i>
+              <span>Natural Pest Control Seminar</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-laptop"></i>
+              <span>Digital Agriculture Webinar</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-shopping-basket"></i>
+              <span>Farmers Market</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          Government Schemes
+        </div>
+        <div class="card-body">
+          <div class="quick-links">
+            <a href="#" class="link-item">
+              <i class="fas fa-hand-holding-usd"></i>
+              <span>PM-KISAN</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-shield-alt"></i>
+              <span>PMFBY</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-seedling"></i>
+              <span>PKVY</span>
+            </a>
+            <a href="#" class="link-item">
+              <i class="fas fa-credit-card"></i>
+              <span>Kisan Credit Card</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Resources</a>
+        <a href="#">Schemes</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; 2023 Agriculture Awareness India. All Rights Reserved. 
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

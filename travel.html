@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel and Tourism - India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #007B7F;
+      --secondary: #2C2C2C;
+      --accent: #D4A017;
+      --text: #2C2C2C;
+      --bg-light: #F8F9F5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards 0.5s;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    main {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      opacity: 0;
+      animation: slideUp 0.8s ease-out forwards;
+    }
+
+    aside {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      transform: translateX(50px);
+      opacity: 0;
+      animation: slideIn 0.8s ease-out forwards;
+    }
+
+    aside:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    aside:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards 1s;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main, aside {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Travel and Tourism in India</h1>
+  </header>
+
+  <div class="container">
+    <main>
+      <h2>Overview</h2>
+      <p>
+        India is one of the most diverse and culturally rich travel destinations in the world. From the Himalayas in the north to the serene backwaters of Kerala in the south, and from historical monuments to spiritual journeys, the country offers a wide spectrum of experiences.
+      </p>
+
+      <img src="tajmahal.jpeg" alt="Incredible India"/>
+
+      <h2>Why Travel India?</h2>
+      <ul>
+        <li>Explore UNESCO World Heritage Sites</li>
+        <li>Rich spiritual and cultural traditions</li>
+        <li>Wildlife and eco-tourism experiences</li>
+        <li>Adventure tourism and trekking</li>
+        <li>Ayurveda, wellness, and yoga tourism</li>
+      </ul>
+
+      <h2>Ministry of Tourism</h2>
+      <p>
+        The <strong>Ministry of Tourism</strong>, Government of India, is responsible for the development and promotion of tourism in the country. It formulates national policies and programs and coordinates with central and state agencies to promote tourism both domestically and internationally.
+      </p>
+
+      <h2>Initiatives & Campaigns</h2>
+      <p>
+        Some notable initiatives include the globally acclaimed <strong>Incredible India</strong> campaign, <strong>Dekho Apna Desh</strong> webinars, and the <strong>Swadesh Darshan</strong> and <strong>PRASHAD</strong> schemes for infrastructure development.
+      </p>
+    </main>
+
+    <div>
+      <aside>
+        <h2>Important Links</h2>
+        <ul>
+          <li><a href="https://www.incredibleindia.org/" target="_blank">Incredible India Official Site</a></li>
+          <li><a href="https://tourism.gov.in/" target="_blank">Ministry of Tourism</a></li>
+          <li><a href="https://www.india.gov.in/" target="_blank">National Portal of India</a></li>
+          <li><a href="https://www.incredibleindia.org/content/incredible-india-v2/en/travel/destinations.html" target="_blank">Tourist Destinations</a></li>
+          <li><a href="https://www.evisaindia.com/" target="_blank">India e-Visa Portal</a></li>
+        </ul>
+      </aside>
+
+      <aside>
+        <h2>What's New</h2>
+        <ul>
+          <li>Launch of 'Dekho Apna Desh' pledge and travel series</li>
+          <li>New circuits under the Swadesh Darshan scheme</li>
+          <li>Virtual tourism experiences introduced for international audiences</li>
+          <li>Special focus on Northeast tourism and tribal circuits</li>
+        </ul>
+      </aside>
+
+      <aside>
+        <h2>Ministry & Tourism Boards</h2>
+        <ul>
+          <li><a href="https://tourism.gov.in/" target="_blank">Ministry of Tourism, India</a></li>
+          <li><a href="https://www.incredibleindia.org/" target="_blank">Incredible India Campaign</a></li>
+          <li><a href="https://asi.nic.in/" target="_blank">Archaeological Survey of India</a></li>
+          <li><a href="https://uttarakhandtourism.gov.in/" target="_blank">Uttarakhand Tourism Board</a></li>
+          <li><a href="https://keralatourism.org/" target="_blank">Kerala Tourism</a></li>
+          <li><a href="https://mahatourism.gov.in/" target="_blank">Maharashtra Tourism</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Ministry of Tourism, Government of India
+  </footer>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Government Help Desk</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3e72;
+            --secondary: #d4a017;
+            --danger: #dc3545;
+            --success: #28a745;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+        
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: var(--primary);
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .sidebar-nav {
+            padding: 20px 0;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .nav-item i {
+            margin-right: 10px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-card h3 {
+            margin-top: 0;
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: var(--primary);
+        }
+        
+        .feedback-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .feedback-table th, .feedback-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feedback-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .rating-cell {
+            display: flex;
+            align-items: center;
+        }
+        
+        .stars {
+            color: var(--secondary);
+            margin-right: 5px;
+        }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .status-new {
+            background: #e3f2fd;
+            color: var(--primary);
+        }
+        
+        .status-reviewed {
+            background: #e8f5e9;
+            color: var(--success);
+        }
+        
+        .btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-sm {
+            padding: 4px 8px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Portal</h2>
+                <p>Government Help Desk</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="material-icons">dashboard</i>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="material-icons">feedback</i>
+                    Citizen Feedback
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="material-icons">people</i>
+                    User Management
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="material-icons">settings</i>
+                    Settings
+                </a>
+                <a href="index.html" class="nav-item">
+                    <i class="material-icons">switch_account</i>
+                    Switch to User View
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="dashboard-header">
+                <h1>Dashboard Overview</h1>
+                <div class="user-profile">
+                    <span>Welcome, Admin</span>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Feedback</h3>
+                    <div class="value" id="total-feedback">127</div>
+                    <div>+12% from last week</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Rating</h3>
+                    <div class="value" id="avg-rating">4.2</div>
+                    <div class="rating-cell">
+                        <div class="stars">★★★★☆</div>
+                        <span>(out of 5)</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Actions</h3>
+                    <div class="value" id="pending-actions">8</div>
+                    <div>New feedback to review</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Top Service</h3>
+                    <div class="value">Passport</div>
+                    <div>42% of all feedback</div>
+                </div>
+            </div>
+            
+            <!-- Recent Feedback Table -->
+            <h2>Recent Citizen Feedback</h2>
+            <table class="feedback-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Rating</th>
+                        <th>Comments</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="feedback-table-body">
+                    <!-- Will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sample data - in real app, fetch from your JSON/API
+        const feedbackData = [
+            {
+                id: "FB-001",
+                rating: 5,
+                comments: "Excellent service! Got my passport in 3 days.",
+                service: "Passport",
+                date: "2023-11-15",
+                status: "new"
+            },
+            {
+                id: "FB-002",
+                rating: 3,
+                comments: "Average experience. Waiting time was too long.",
+                service: "Driving License",
+                date: "2023-11-14",
+                status: "reviewed"
+            },
+            {
+                id: "FB-003",
+                rating: 4,
+                comments: "Helpful staff but website could be improved.",
+                service: "PAN Card",
+                date: "2023-11-13",
+                status: "new"
+            }
+        ];
+
+        // Populate table
+        function renderFeedbackTable() {
+            const tableBody = document.getElementById('feedback-table-body');
+            tableBody.innerHTML = '';
+            
+            feedbackData.forEach(feedback => {
+                const row = document.createElement('tr');
+                
+                // Generate stars HTML
+                const stars = '★'.repeat(feedback.rating) + '☆'.repeat(5 - feedback.rating);
+                
+                row.innerHTML = `
+                    <td>${feedback.id}</td>
+                    <td class="rating-cell">
+                        <div class="stars">${stars}</div>
+                        <span>(${feedback.rating}/5)</span>
+                    </td>
+                    <td>${feedback.comments}</td>
+                    <td>${feedback.service}</td>
+                    <td>${feedback.date}</td>
+                    <td>
+                        <span class="status-badge status-${feedback.status}">
+                            ${feedback.status.charAt(0).toUpperCase() + feedback.status.slice(1)}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" onclick="viewFeedback('${feedback.id}')">
+                            View
+                        </button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // View feedback details
+        function viewFeedback(id) {
+            const feedback = feedbackData.find(f => f.id === id);
+            if (feedback) {
+                alert(`Feedback Details:\n\nID: ${feedback.id}\nRating: ${feedback.rating}/5\nService: ${feedback.service}\n\n${feedback.comments}`);
+            }
+        }
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', renderFeedbackTable);
+    </script>
+</body>
+</html>

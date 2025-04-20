@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>States of India</title>
+  <style>
+    :root {
+      --primary: #007B7F;
+      --secondary: #2C2C2C;
+      --accent: #D4A017;
+      --text: #2C2C2C;
+      --bg-light: #F8F9F5;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      background: var(--primary);
+      padding: 1.5rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .header h1 {
+      color: white;
+      margin: 0;
+      text-align: center;
+      font-size: 2rem;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards 0.5s;
+    }
+
+    .main-content {
+      margin-top: 100px;
+      padding: 2rem;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .state-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transform-origin: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: calc(var(--order) * 0.1s);
+    }
+
+    .state-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, white, var(--bg-light));
+    }
+
+    .state-name {
+      color: var(--primary);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+
+    .state-link a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      background: var(--bg-light);
+    }
+
+    .state-link a:hover {
+      color: var(--primary);
+      background: var(--accent);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards 1s;
+    }
+
+    @media (max-width: 768px) {
+      .states-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>States of India</h1>
+  </header>
+
+  <main class="main-content">
+    <div class="states-grid">
+      <!-- States will be populated by JavaScript -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Government of India Info Portal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const states = [
+      { name: "Andhra Pradesh", url: "https://www.ap.gov.in/" },
+      { name: "Arunachal Pradesh", url: "https://arunachalpradesh.gov.in/" },
+      { name: "Assam", url: "https://assam.gov.in/" },
+      { name: "Bihar", url: "https://state.bihar.gov.in/" },
+      { name: "Chhattisgarh", url: "https://cgstate.gov.in/" },
+      { name: "Goa", url: "https://www.goa.gov.in/" },
+      { name: "Gujarat", url: "https://gujaratindia.gov.in/" },
+      { name: "Haryana", url: "https://haryana.gov.in/" },
+      { name: "Himachal Pradesh", url: "https://himachal.nic.in/" },
+      { name: "Jharkhand", url: "https://www.jharkhand.gov.in/" },
+      { name: "Karnataka", url: "https://www.karnataka.gov.in/" },
+      { name: "Kerala", url: "https://kerala.gov.in/" },
+      { name: "Madhya Pradesh", url: "https://mp.gov.in/" },
+      { name: "Maharashtra", url: "https://www.maharashtra.gov.in/" },
+      { name: "Manipur", url: "https://manipur.gov.in/" },
+      { name: "Meghalaya", url: "https://meghalaya.gov.in/" },
+      { name: "Mizoram", url: "https://mizoram.gov.in/" },
+      { name: "Nagaland", url: "https://nagaland.gov.in/" },
+      { name: "Odisha", url: "https://odisha.gov.in/" },
+      { name: "Punjab", url: "https://punjab.gov.in/" },
+      { name: "Rajasthan", url: "https://rajasthan.gov.in/" },
+      { name: "Sikkim", url: "https://sikkim.gov.in/" },
+      { name: "Tamil Nadu", url: "https://tn.gov.in/" },
+      { name: "Telangana", url: "https://www.telangana.gov.in/" },
+      { name: "Tripura", url: "https://tripura.gov.in/" },
+      { name: "Uttar Pradesh", url: "https://up.gov.in/" },
+      { name: "Uttarakhand", url: "https://uk.gov.in/" },
+      { name: "West Bengal", url: "https://wb.gov.in/" }
+    ];
+
+    const statesGrid = document.querySelector('.states-grid');
+
+    states.forEach((state, index) => {
+      const stateCard = document.createElement('div');
+      stateCard.className = 'state-card';
+      stateCard.style.setProperty('--order', index);
+      
+      stateCard.innerHTML = `
+        <div class="state-name">${state.name}</div>
+        <div class="state-link">
+          <a href="${state.url}" target="_blank">${state.url.replace('https://', '')}</a>
+        </div>
+      `;
+      
+      statesGrid.appendChild(stateCard);
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.state-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

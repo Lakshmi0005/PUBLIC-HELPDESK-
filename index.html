@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Help Desk</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body> 
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                <h1>Government Help Desk</h1>
+            </div>
+            <nav class="main-nav">
+                <div class="nav-item">
+                    <div class="nav-btn active" data-tab="home">
+                        <span class="material-icons nav-icon">home</span>
+                        <span>Home</span>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-btn">
+                        <span class="material-icons nav-icon">topic</span>
+                        <span>Topics</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="agriculture.html">Agriculture</a>
+                        <a href="governance.html">Government & Administration</a>
+                        <a href="labour&employement.html">Labour & Employment</a>
+                        <a href="travel.html">Travel and Tourism</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-btn">
+                        <span class="material-icons nav-icon">account_balance</span>
+                        <span>My Government</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="whoiswho.html">Who's Who</a>
+                        <a href="publications.html">Publications</a>
+                        <a href="https://www.indiacode.nic.in/">Acts</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-btn">
+                        <span class="material-icons nav-icon">flag</span>
+                        <span>India at Glance</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="statesofindia.html">States of India</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-btn" data-tab="services">
+                        <span class="material-icons nav-icon">miscellaneous_services</span>
+                        <span>Services</span>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-btn" data-tab="contact">
+                        <span class="material-icons nav-icon">contact_support</span>
+                        <span>Contact</span>
+                    </div>
+                </div>
+                <button onclick="location.href='login.html'" class="btn" type="submit">
+                    <span class="material-icons">login</span> Login / Sign Up
+                </button>
+            </nav>
+        </div>
+        <div class="header-bottom">
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="navSearchInput" placeholder="        Search services...">
+                    <button class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.3-4.3"/>
+                        </svg>
+                    </button>
+                    <button class="advanced-search-btn">Advanced Search</button>
+                </div>
+                <div class="quick-links">
+                    <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html">PAN Card</a>
+                    <span class="separator">|</span>
+                    <a href="https://services.india.gov.in/service/detail/birth-certificate-1">Birth Certificate</a>
+                    <span class="separator">|</span>
+                    <a href="https://onlineap.meeseva.gov.in/CitizenPortal/UserInterface/Citizen/Home.aspx">Aadhaar Card</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+   
+    <main>
+       
+       
+        <div class="content-container">
+            <div id="home" class="tab-content active">
+                <h2>Welcome to Government Help Desk</h2>
+                <p>Your one-stop portal for government services and information. We're here to help you access essential services efficiently and conveniently.</p>
+                <section id="about">
+                <!-- Fixed Carousel Structure -->
+                <div class="carousel-container">
+                    <div class="service-grid">
+                        <div class="service-slide">
+                            <a href="https://www.eprintcafe.com/?gad_source=1&gbraid=0AAAAAqeAy9z7bcvXZ84VuxIB7xzsSJ7wl&gclid=Cj0KCQjwtpLABhC7ARIsALBOCVqfy0j6d8ZPC0XldnBgIDiP1qyvoOx56XyIWiHMbSPt73RoNnOhKJkaAtC0EALw_wcB" class="service-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                <h3>Document Services</h3>
+                                <p>Apply for certificates and official documents</p>
+                            </a>
+                            <a href="https://vahan.parivahan.gov.in/vahanservice/vahan/ui/usermgmt/login.xhtml?faces-redirect=true" class="service-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <h3>Citizen Services</h3>
+                                <p>Access various citizen-centric services</p>
+                            </a>
+                        </div>
+                        <div class="service-slide">
+                            <a href="https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html" class="service-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                                <h3>PAN Card Services</h3>
+                                <p>Apply for new PAN card or make corrections</p>
+                            </a>
+                            <a href="https://uidai.gov.in/en/contact-support/have-any-question/921-english-uk/faqs/aadhaar-online-services.html" class="service-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11.5v2.83L15 16"/><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5"/><path d="M9 12H4"/><path d="M12 7v5"/></svg>
+                                <h3>Aadhaar Services</h3>
+                                <p>Update Aadhaar details and download e-Aadhaar</p>
+                            </a>
+                        </div>
+                        <div class="service-slide">
+                            <a href="https://parivahan.gov.in/parivahan//en/content/driving-licence-0" class="service-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                                <h3>Driving License Services</h3>
+                                <p>Apply for new license or renewal</p>
+                            </a>
+                            <a href="https://services.india.gov.in/service/detail/apply-online-for-income-certificate-1" class="service-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                                <h3>Income Certificate</h3>
+                                <p>Apply for income certificate verification</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-dots"></div>
+                </div>
+                </section>
+                
+                <section id="live-assistance"class="live-assistance-section">
+                    <div class="assistance-container">
+                      <div class="assistance-header">
+                        <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg> Live Assistance</h2>
+                        <p>Get real-time help from government service representatives</p>
+                      </div>
+                      
+                      <div class="assistance-options">
+                        <div class="assistance-card">
+                          <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                          </div>
+                          <h3>Instant Callback</h3>
+                          <p>Request a call from our support team</p>
+                          <button class="assistance-btn">Request Now</button>
+                        </div>
+                        
+                        <div class="assistance-card">
+                          <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <rect width="20" height="16" x="2" y="4" rx="2"/>
+                              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                          </div>
+                          <h3>Email Support</h3>
+                          <p>Get help via email within 24 hours</p>
+                          <button class="assistance-btn">Send Email</button>
+                        </div>
+                        
+                        <div class="assistance-card live-chat-card">
+                          <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                          </div>
+                          <h3>Live Chat</h3>
+                          <p>Chat with a representative now</p>
+                          <button class="assistance-btn primary">Start Chat</button>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                 
+                   <!-- Grievance Redressal System -->
+<section id= "grievance-redressal"class="grievance-section">
+    <div class="container">
+      <h2>Grievance Redressal System</h2>
+      <p>If you have any complaints or concerns, please let us know. We'll ensure it reaches the right department.</p>
+  
+      <form class="grievance-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Describe your grievance..." required></textarea>
+        <label class="file-upload">
+            <span>Attach supporting document (optional):</span>
+            <input type="file" name="fileUpload" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+          </label>
+        <button type="submit">Submit Complaint</button>
+      </form>
+    </div>
+  </section>
+  
+  <div class="feedback-system">
+    <h3><i class="material-icons">feedback</i> Rate Our Service</h3>
+    <div class="rating-stars">
+      <span class="star" data-rating="1">★</span>
+      <span class="star" data-rating="2">★</span>
+      <span class="star" data-rating="3">★</span>
+      <span class="star" data-rating="4">★</span>
+      <span class="star" data-rating="5">★</span>
+    </div>
+    <textarea placeholder="Additional comments..."></textarea>
+    <button class="submit-feedback">Submit</button>
+  </div>
+  
+            </div>
+            <div id="services" class="tab-content">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="text" id="searchInput" placeholder="Search services...">
+                </div>
+                <div id="servicesList"></div>
+            </div>
+            
+            <div id="contact" class="tab-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                            <p class="label">Emergency Helpline</p>
+                            <p>1-800-HELP (Available 24/7)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <div>
+                            <p class="label">Email Support</p>
+                            <p>help@government.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                        <div>
+                            <p class="label">Office Hours</p>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+   
+    <div class="visitor-counter">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <p>Visitors today: <span id="visitorCount">1</span></p>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="https://www.india.gov.in">National Portal of India</a></li>
+                    <li><a href="https://www.digital.india.gov.in">Digital India</a></li>
+                    <li><a href="https://www.mygov.in">MyGov</a></li>
+                    <li><a href="https://www.rti.gov.in">RTI Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#linkedin">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Government Help Desk. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
